@@ -1,26 +1,53 @@
 #include <stdio.h>
+#include<string.h>
 
-int main(){
-    struct colecionEstructura 
+struct colecionEstructura 
     {
         char nombre[25];
         char direccion[50];
         char carrera[15];
-        int edad; 
-        float promedio;
+        int edad[5]; 
+        float promedio[5];
 
-    } estructura_Alumno = {"Brandon","Conocoto","software",21,8.5};
+    };
 
-    printf("Datos del Alumno:\n",estructura_Alumno);
-    printf("%s\n", estructura_Alumno.nombre);
-    printf("%s\n", estructura_Alumno.direccion);
-    printf("%s\n", estructura_Alumno.carrera);
-    printf("%i\n", estructura_Alumno.edad);
-    printf("%0.2f\n", estructura_Alumno.promedio); 
+int main(){
+     struct colecionEstructura estructura_Alumno[2];
+    
+    
+
+    
 
     for (int i = 0; i < 2; i++)
     {
-        printf("%c ",estructura_Alumno.nombre[i]);
+        printf("\n");
+        printf("Ingrese los datos del Alumno:\n");
+        printf("Nombre:");
+        fflush(stdin);
+        gets(estructura_Alumno.nombre);
+        printf("Direccion:");
+        fflush(stdin);
+        gets(estructura_Alumno.direccion);
+        printf("Carrera:");
+        fflush(stdin);
+        gets(estructura_Alumno.carrera);
+        printf("Edad:");
+        fflush(stdin);
+        scanf("%i",&estructura_Alumno.edad[i]);
+        printf("Promedio:");
+        fflush(stdin);
+        scanf("%0.2f",&estructura_Alumno.promedio[i]);
+    }     
+
+    for (int i = 0; i < 2; i++)
+    {
+        printf("Datos del Alumno:\n",estructura_Alumno);
+
+        puts(estructura_Alumno.nombre[2]);
+        puts(estructura_Alumno.direccion[2]);
+        puts(estructura_Alumno.carrera[2]);
+        printf("%i\n", estructura_Alumno.edad[2]);
+        printf("%0.2f\n", estructura_Alumno.promedio[2]);
     }
     
 
